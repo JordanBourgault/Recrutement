@@ -50,9 +50,8 @@ margin/bottom = 1400.0
 texture = ExtResource( 2 )
 stretch_mode = 0
 
-[node name="MarginContainer 3" type="MarginContainer" parent="ScrollContainer"]
+[node name="Greybox1" type="MarginContainer" parent="ScrollContainer"]
 
-editor/display_folded = true
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -64,9 +63,8 @@ margin/bottom = 309.0
 custom_constants/margin_top = 55
 custom_constants/margin_left = 61
 
-[node name="GridContainer" type="GridContainer" parent="ScrollContainer/MarginContainer 3"]
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer/Greybox1"]
 
-editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -78,7 +76,7 @@ margin/bottom = 309.0
 custom_constants/hseparation = -1
 columns = 9
 
-[node name="Introspection" type="TextureFrame" parent="ScrollContainer/MarginContainer 3/GridContainer" groups=[
+[node name="Introspection" type="TextureFrame" parent="ScrollContainer/Greybox1/GridContainer" groups=[
 "GREYBOX",
 ]]
 
@@ -93,7 +91,7 @@ margin/bottom = 254.0
 texture = ExtResource( 3 )
 stretch_mode = 0
 
-[node name="Autonomie" type="TextureFrame" parent="ScrollContainer/MarginContainer 3/GridContainer" groups=[
+[node name="Autonomie" type="TextureFrame" parent="ScrollContainer/Greybox1/GridContainer" groups=[
 "GREYBOX",
 ]]
 
@@ -108,7 +106,7 @@ margin/bottom = 254.0
 texture = ExtResource( 3 )
 stretch_mode = 0
 
-[node name="Gestion" type="TextureFrame" parent="ScrollContainer/MarginContainer 3/GridContainer" groups=[
+[node name="Gestion" type="TextureFrame" parent="ScrollContainer/Greybox1/GridContainer" groups=[
 "GREYBOX",
 ]]
 
@@ -123,7 +121,7 @@ margin/bottom = 254.0
 texture = ExtResource( 3 )
 stretch_mode = 0
 
-[node name="Propension" type="TextureFrame" parent="ScrollContainer/MarginContainer 3/GridContainer" groups=[
+[node name="Propension" type="TextureFrame" parent="ScrollContainer/Greybox1/GridContainer" groups=[
 "GREYBOX",
 ]]
 
@@ -138,7 +136,7 @@ margin/bottom = 254.0
 texture = ExtResource( 3 )
 stretch_mode = 0
 
-[node name="Ouverture" type="TextureFrame" parent="ScrollContainer/MarginContainer 3/GridContainer" groups=[
+[node name="Ouverture" type="TextureFrame" parent="ScrollContainer/Greybox1/GridContainer" groups=[
 "GREYBOX",
 ]]
 
@@ -153,7 +151,7 @@ margin/bottom = 254.0
 texture = ExtResource( 3 )
 stretch_mode = 0
 
-[node name="Adaptabilite" type="TextureFrame" parent="ScrollContainer/MarginContainer 3/GridContainer" groups=[
+[node name="Adaptabilite" type="TextureFrame" parent="ScrollContainer/Greybox1/GridContainer" groups=[
 "GREYBOX",
 ]]
 
@@ -168,7 +166,7 @@ margin/bottom = 254.0
 texture = ExtResource( 3 )
 stretch_mode = 0
 
-[node name="Capacite" type="TextureFrame" parent="ScrollContainer/MarginContainer 3/GridContainer" groups=[
+[node name="Capacite" type="TextureFrame" parent="ScrollContainer/Greybox1/GridContainer" groups=[
 "GREYBOX",
 ]]
 
@@ -183,7 +181,7 @@ margin/bottom = 254.0
 texture = ExtResource( 3 )
 stretch_mode = 0
 
-[node name="Perseverance" type="TextureFrame" parent="ScrollContainer/MarginContainer 3/GridContainer" groups=[
+[node name="Perseverance" type="TextureFrame" parent="ScrollContainer/Greybox1/GridContainer" groups=[
 "GREYBOX",
 ]]
 
@@ -198,7 +196,7 @@ margin/bottom = 254.0
 texture = ExtResource( 3 )
 stretch_mode = 0
 
-[node name="Sens" type="TextureFrame" parent="ScrollContainer/MarginContainer 3/GridContainer" groups=[
+[node name="Sens" type="TextureFrame" parent="ScrollContainer/Greybox1/GridContainer" groups=[
 "GREYBOX",
 ]]
 
@@ -1324,14 +1322,15 @@ params/stretch_mode = 0
 
 [node name="MarginContainer 4" type="MarginContainer" parent="ScrollContainer"]
 
+editor/display_folded = true
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
 margin/top = 0.0
-margin/right = 1048.0
-margin/bottom = 194.0
+margin/right = 1085.0
+margin/bottom = 624.0
 custom_constants/margin_top = 445
 custom_constants/margin_left = 60
 
@@ -1343,8 +1342,8 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 60.0
 margin/top = 445.0
-margin/right = 1100.0
-margin/bottom = 639.0
+margin/right = 1085.0
+margin/bottom = 624.0
 custom_constants/vseparation = 1
 custom_constants/hseparation = 1
 columns = 6
@@ -2156,6 +2155,43 @@ enabled_focus_mode = 2
 shortcut = null
 text = "Précédent"
 flat = false
+
+[node name="Greybox2" type="MarginContainer" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 8.0
+margin/bottom = 40.0
+
+[node name="GridContainer" type="GridContainer" parent="Greybox2"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 8.0
+margin/top = 0.0
+margin/right = 8.0
+margin/bottom = 40.0
+columns = 1
+
+[node name="TextureFrame" type="TextureFrame" parent="Greybox2/GridContainer" groups=[
+"GREYBOX",
+]]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 0.0
+stretch_mode = 0
 
 [connection signal="pressed" from="ScrollContainer/MarginContainer/Precedent" to="." method="_on_Precedent_pressed"]
 

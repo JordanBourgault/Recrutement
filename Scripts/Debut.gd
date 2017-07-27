@@ -18,11 +18,11 @@ func _ready():
 		#(Quand on pèse sur n'importe quel bouton on l'insère dans la fonction _bouton_appuye)
 		button.connect("pressed", self, "_bouton_appuye", [button])
 		
-		#On itère à travers les index de chaque bouton pour tous les détecter et les assigner au bon groupe.
+		#On itère à travers les index de chaque bouton tableau pour tous les détecter et les assigner au bon groupe.
 		for i in range(1, 7):
 			var index = str(i)
 			
-			#Vérification du nom et de l'index de chaque bouton pour pouvoir l'assigner au groupe adéquat
+			#Vérification du nom et de l'index de chaque bouton du premier groupe pour pouvoir l'assigner au groupe adéquat
 			if button.get_name() == ("Introspection" + index):
 				button.add_to_group("Introspection")
 			if button.get_name() == ("Autonomie" + index):
@@ -42,32 +42,51 @@ func _ready():
 			if button.get_name() == ("Sens" + index):
 				button.add_to_group("Sens")
 
+	for button in get_tree().get_nodes_in_group("BOUTON2"):
+		button.connect("pressed", self, "_bouton_appuye", [button])
+		for i in range(1, 7):
+			var index = str(i)
+			#Vérification des boutons du deuxième groupe
+			if button.get_name() == ("Technique" + index):
+				button.add_to_group("Technique")
+			if button.get_name() == ("Analyse" + index):
+				button.add_to_group("Analyse")
+			if button.get_name() == ("Creativite" + index):
+				button.add_to_group("Creativite")
+			if button.get_name() == ("Relation" + index):
+				button.add_to_group("Relation")
+			if button.get_name() == ("Resultat" + index):
+				button.add_to_group("Resultats")
+			if button.get_name() == ("Procedure" + index):
+				button.add_to_group("Procedures")
+
+
 func _bouton_appuye(button):
 	global.adjustValues(button)
 
 
 #Fonction qui vérifie l'état de la varible et qui grise (ou dégrise) la colonne au besoin
-func verifyGrey(box, variable, name):
-	if variable != true:
-			if box.get_name() == name:
+func verifyGrey(box, variable):
+	if global.Col_Categories[variable.to_upper()] != true:
+			if box.get_name() == variable:
 				box.set_texture(load("res://Images/Grayed_rect.png"))
 	else:
-		if box.get_name() == name:
+		if box.get_name() == variable:
 			box.set_texture(load("res://Images/Trans_rect.png"))
 
-
+#TODO: Add greybox support for second table
 #Fonction qui s'occupe de griser les colonnes nécessaires
 func greyColumns():
 	for box in get_tree().get_nodes_in_group("GREYBOX"):
-		verifyGrey(box, global.col_INTROSPECTION, "Introspection")
-		verifyGrey(box, global.col_AUTONOMIE, "Autonomie")
-		verifyGrey(box, global.col_GESTION, "Gestion")
-		verifyGrey(box, global.col_PROPENSION, "Propension")
-		verifyGrey(box, global.col_OUVERTURE, "Ouverture")
-		verifyGrey(box, global.col_ADAPTABILITE, "Adaptabilite")
-		verifyGrey(box, global.col_CAPACITE, "Capacite")
-		verifyGrey(box, global.col_PERSEVERANCE, "Perseverance")
-		verifyGrey(box, global.col_SENS, "Sens")
+		verifyGrey(box, "Introspection")
+		verifyGrey(box, "Autonomie")
+		verifyGrey(box, "Gestion")
+		verifyGrey(box, "Propension")
+		verifyGrey(box, "Ouverture")
+		verifyGrey(box, "Adaptabilite")
+		verifyGrey(box, "Capacite")
+		verifyGrey(box, "Perseverance")
+		verifyGrey(box, "Sens")
 
 func _on_Precedent_pressed():
 	get_tree().change_scene("res://Selection.tscn")

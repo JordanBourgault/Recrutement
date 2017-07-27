@@ -14,18 +14,39 @@ var Categories = {
 	 "CAPACITE" : 0,
 	 "PERSEVERANCE" : 0,
 	 "SENS" : 0,
+	
+	#Deuxième groupe
+	"TECHNIQUE" : 0,
+	"ANALYSE" : 0,
+	"CREATIVITE" : 0,
+	"RELATION" : 0,
+	"RESULTATS" : 0,
+	"PROCEDURES" : 0,
 }
 
-#Variables qui vérifient le statut des colonnes afin de les griser
-var col_INTROSPECTION = false
-var col_AUTONOMIE = false
-var col_GESTION = false
-var col_PROPENSION = false
-var col_OUVERTURE = false
-var col_ADAPTABILITE = false
-var col_CAPACITE = false
-var col_PERSEVERANCE = false
-var col_SENS = false
+#Variables qui vérifient le statut des colonnes du premier tableau afin de les griser
+var Col_Categories = {
+	"INTROSPECTION" : false,
+	"AUTONOMIE" : false,
+	"GESTION" : false,
+	"PROPENSION" : false,
+	"OUVERTURE" : false,
+	"ADAPTABILITE" : false,
+	"CAPACITE" : false,
+	"PERSEVERANCE" : false,
+	"SENS" : false,
+}
+#Variables qui vérifient le statut des colonnes du deuxième tableau afin de les griser
+var Col_Categories2 = {
+	#Deuxième goupe
+	"TECHNIQUE" : false,
+	"ANALYSE" : false,
+	"CREATIVITE" : false,
+	"RELATION" : false,
+	"RESULTATS" : false,
+	"PROCEDURES" : false,
+}
+
 
 #Variables qui gardent en mémoire la date et l'heure
 var date_time = OS.get_datetime()
@@ -107,6 +128,32 @@ func adjustValues(button):
 		checkValues("Sens", index)
 		disableButtons("Sens", index)
 
+	#Deuxième tableau
+	if button.is_in_group("Technique"):
+		checkValues("Technique", index)
+		disableButtons("Technique", index)
+
+	if button.is_in_group("Analyse"):
+		checkValues("Analyse", index)
+		disableButtons("Analyse", index)
+
+	if button.is_in_group("Creativite"):
+		checkValues("Creativite", index)
+		disableButtons("Creativite", index)
+
+	if button.is_in_group("Relation"):
+		checkValues("Relation", index)
+		disableButtons("Relation", index)
+
+	if button.is_in_group("Resultats"):
+		checkValues("Resultats", index)
+		disableButtons("Resultats", index)
+
+	if button.is_in_group("Procedures"):
+		checkValues("Procedures", index)
+		disableButtons("Procedures", index)
 
 	print([Categories["INTROSPECTION"], Categories["AUTONOMIE"], Categories["GESTION"], Categories["PROPENSION"], Categories["OUVERTURE"], Categories["ADAPTABILITE"], Categories["CAPACITE"], 
 		Categories["PERSEVERANCE"], Categories["SENS"]])
+		
+	print([Categories["TECHNIQUE"], Categories["ANALYSE"], Categories["CREATIVITE"], Categories["RELATION"], Categories["RESULTATS"], Categories["PROCEDURES"]])
