@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=1]
+[gd_scene load_steps=11 format=1]
 
 [ext_resource path="res://Theme/new_theme.tres" type="Theme" id=1]
 [ext_resource path="res://Scripts/Debut.gd" type="Script" id=2]
@@ -8,7 +8,8 @@
 [ext_resource path="res://Images/Selected_button.png" type="Texture" id=6]
 [ext_resource path="res://Images/Unselected_2_button.png" type="Texture" id=7]
 [ext_resource path="res://Images/Selected_2_button.png" type="Texture" id=8]
-[ext_resource path="res://Images/Trans_rect2.png" type="Texture" id=9]
+[ext_resource path="res://Fonts/Arial_Noir.fnt" type="BitmapFont" id=9]
+[ext_resource path="res://Images/Trans_rect2.png" type="Texture" id=10]
 
 [node name="Node" type="Control"]
 
@@ -2073,7 +2074,6 @@ params/stretch_mode = 0
 
 [node name="Nom" type="MarginContainer" parent="ScrollContainer"]
 
-editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -2095,13 +2095,13 @@ margin/left = 5.0
 margin/top = 5.0
 margin/right = 5.0
 margin/bottom = 21.0
+custom_fonts/font = ExtResource( 9 )
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
 [node name="Date" type="MarginContainer" parent="ScrollContainer"]
 
-editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -2123,6 +2123,7 @@ margin/left = 950.0
 margin/top = 5.0
 margin/right = 950.0
 margin/bottom = 21.0
+custom_fonts/font = ExtResource( 9 )
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -2196,7 +2197,7 @@ margin/left = 0.0
 margin/top = 0.0
 margin/right = 172.0
 margin/bottom = 259.0
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 stretch_mode = 0
 
 [node name="Analyse" type="TextureFrame" parent="ScrollContainer/Greybox2/GridContainer" groups=[
@@ -2211,7 +2212,7 @@ margin/left = 171.0
 margin/top = 0.0
 margin/right = 343.0
 margin/bottom = 259.0
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 stretch_mode = 0
 
 [node name="Creativite" type="TextureFrame" parent="ScrollContainer/Greybox2/GridContainer" groups=[
@@ -2226,7 +2227,7 @@ margin/left = 342.0
 margin/top = 0.0
 margin/right = 514.0
 margin/bottom = 259.0
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 stretch_mode = 0
 
 [node name="Relation" type="TextureFrame" parent="ScrollContainer/Greybox2/GridContainer" groups=[
@@ -2241,7 +2242,7 @@ margin/left = 513.0
 margin/top = 0.0
 margin/right = 685.0
 margin/bottom = 259.0
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 stretch_mode = 0
 
 [node name="Resultats" type="TextureFrame" parent="ScrollContainer/Greybox2/GridContainer" groups=[
@@ -2256,7 +2257,7 @@ margin/left = 684.0
 margin/top = 0.0
 margin/right = 856.0
 margin/bottom = 259.0
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 stretch_mode = 0
 
 [node name="Procedures" type="TextureFrame" parent="ScrollContainer/Greybox2/GridContainer" groups=[
@@ -2271,7 +2272,7 @@ margin/left = 855.0
 margin/top = 0.0
 margin/right = 1027.0
 margin/bottom = 259.0
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 stretch_mode = 0
 
 [node name="Popup" type="Popup" parent="ScrollContainer"]
@@ -2292,13 +2293,28 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 298.0
-margin/top = 225.0
-margin/right = 698.0
-margin/bottom = 425.0
-popup/exclusive = false
-window/title = "Alert!"
+margin/left = 329.0
+margin/top = 229.0
+margin/right = 729.0
+margin/bottom = 429.0
+popup/exclusive = true
+window/title = "Dimensions possibles"
 dialog/hide_on_ok = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer/Popup/AcceptDialog"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 4.0
+margin/top = 13.0
+margin/right = 396.0
+margin/bottom = 140.0
+bbcode/enabled = false
+bbcode/bbcode = "BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA 
+"
+visible_characters = -1
 
 [connection signal="pressed" from="ScrollContainer/MarginContainer/Precedent" to="." method="_on_Precedent_pressed"]
 
