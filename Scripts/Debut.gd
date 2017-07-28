@@ -14,7 +14,7 @@ func _ready():
 	
 	#On trouve tous les boutons à travers leur groupe en itérant à travers tout l'arbre
 	for button in get_tree().get_nodes_in_group("BOUTON"):
-		#On connecte tout les boutons à la même fonctionb qui va s'occuper d'updater les items nécessaires.
+		#On connecte tout les boutons à la même fonction qui va s'occuper d'updater les items nécessaires.
 		#(Quand on pèse sur n'importe quel bouton on l'insère dans la fonction _bouton_appuye)
 		button.connect("pressed", self, "_bouton_appuye", [button])
 		
@@ -41,6 +41,9 @@ func _ready():
 				button.add_to_group("Perseverance")
 			if button.get_name() == ("Sens" + index):
 				button.add_to_group("Sens")
+				
+#	if global.Categories["Introspection"] != 0:
+#		get_node("ScrollContainer/MarginContainer 2/GridContainer/Introspection" + str(global.Categories["Introspection"]))
 
 	for button in get_tree().get_nodes_in_group("BOUTON2"):
 		button.connect("pressed", self, "_bouton_appuye", [button])
@@ -63,6 +66,7 @@ func _ready():
 
 func _bouton_appuye(button):
 	global.adjustValues(button)
+	get_node("ScrollContainer/Popup/AcceptDialog").popup()
 
 
 #Fonction qui vérifie l'état de la varible et qui grise (ou dégrise) la colonne au besoin
@@ -74,10 +78,20 @@ func verifyGrey(box, variable):
 		if box.get_name() == variable:
 			box.set_texture(load("res://Images/Trans_rect.png"))
 
+
+func verifyGrey2(box, variable):
+	if global.Col_Categories2[variable.to_upper()] != true:
+			if box.get_name() == variable:
+				box.set_texture(load("res://Images/Grayed_rect2.png"))
+	else:
+		if box.get_name() == variable:
+			box.set_texture(load("res://Images/Trans_rect2.png"))
+
 #TODO: Add greybox support for second table
 #Fonction qui s'occupe de griser les colonnes nécessaires
 func greyColumns():
 	for box in get_tree().get_nodes_in_group("GREYBOX"):
+		#Colonnes grises du premier tableau
 		verifyGrey(box, "Introspection")
 		verifyGrey(box, "Autonomie")
 		verifyGrey(box, "Gestion")
@@ -87,6 +101,14 @@ func greyColumns():
 		verifyGrey(box, "Capacite")
 		verifyGrey(box, "Perseverance")
 		verifyGrey(box, "Sens")
+		
+		#Colonnes grises du deuxième tableau
+		verifyGrey2(box, "Technique")
+		verifyGrey2(box, "Analyse")
+		verifyGrey2(box, "Creativite")
+		verifyGrey2(box, "Relation")
+		verifyGrey2(box, "Resultats")
+		verifyGrey2(box, "Procedures")
 
 func _on_Precedent_pressed():
 	get_tree().change_scene("res://Selection.tscn")

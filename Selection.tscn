@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=1]
+[gd_scene load_steps=5 format=1]
 
-[ext_resource path="res://Scripts/Selection.gd" type="Script" id=1]
+[ext_resource path="res://Theme/new_theme.tres" type="Theme" id=1]
+[ext_resource path="res://Scripts/Selection.gd" type="Script" id=2]
+[ext_resource path="res://Fonts/Arial_Bold.fnt" type="BitmapFont" id=3]
+[ext_resource path="res://Fonts/ARIAL.fnt" type="BitmapFont" id=4]
 
 [node name="Control" type="Control"]
 
@@ -8,26 +11,27 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
+theme/theme = ExtResource( 1 )
 margin/left = 0.0
 margin/top = 0.0
 margin/right = 40.0
 margin/bottom = 40.0
-script/script = ExtResource( 1 )
+script/script = ExtResource( 2 )
 
-[node name="Label" type="Label" parent="."]
+[node name="RichTextLabel 2" type="RichTextLabel" parent="."]
 
-focus/ignore_mouse = true
+focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
-size_flags/vertical = 0
+size_flags/vertical = 2
 margin/left = 30.0
-margin/top = 70.0
-margin/right = 770.0
-margin/bottom = 84.0
-text = "Choisissez les dimensions viscérales reliées à la conscience de soi nécessaires en relation avec l'emploi convoité :"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
+margin/top = 80.0
+margin/right = 1030.0
+margin/bottom = 120.0
+custom_fonts/bold_font = ExtResource( 3 )
+bbcode/enabled = true
+bbcode/bbcode = "Choisissez les dimensions viscérales reliées à la [b]conscience de soi[/b] nécessaires en relation avec l'emploi convoité :"
+visible_characters = -1
 
 [node name="Continuer" type="Button" parent="."]
 
@@ -272,12 +276,31 @@ text = "Cocher tout"
 flat = false
 align = 0
 
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+size_flags/stretch_ratio = 6.0
+margin/left = 31.0
+margin/top = 342.0
+margin/right = 1031.0
+margin/bottom = 382.0
+custom_fonts/bold_font = ExtResource( 3 )
+custom_fonts/normal_font = ExtResource( 4 )
+bbcode/enabled = true
+bbcode/bbcode = "Choisissez les dimensions viscérales reliées à la [b]motivation[/b] nécessaires en relation avec l'emploi convoité :"
+visible_characters = -1
+
 [node name="Tableau2" type="Container" parent="."]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
+theme/theme = ExtResource( 1 )
 margin/left = -3.0
 margin/top = 264.0
 margin/right = 37.0

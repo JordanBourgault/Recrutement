@@ -57,6 +57,7 @@ var START_HOUR = date_time["hour"]
 var START_MIN = date_time["minute"]
 
 
+
 #Fonction qui ajoute un zéro qui précède le mois ou le jour si il possède seulement un chiffre
 func addZero(key):
 	if (str(date_time[key])).length() == 1:
